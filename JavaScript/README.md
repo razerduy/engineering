@@ -30,14 +30,14 @@ Use single quotes `''` for strings instead of double quotes `""`
 
   ```javascript
   // bad
-  var name = "Eva Note";
+  var name = "Inspi Lab";
 
-  var fullName = "Eva " + this.lastName;
+  var fullName = "Inspi " + this.lastName;
 
   // good
-  var name = 'Eva Note';
+  var name = 'Inspi Lab';
 
-  var fullName = 'Eva ' + this.lastName;
+  var fullName = 'Inspi ' + this.lastName;
   ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -167,16 +167,16 @@ Use `===` and `!==`
 
 ```javascript
   // bad
-  var name = 'Eva Note';
-  if(name == 'Eva Note'){}
+  var name = 'Inspi Lab';
+  if(name == 'Inspi Lab'){}
 
-  if(name != 'Eva Note'){}
+  if(name != 'Inspi Lab'){}
 
   // good
-  var name = 'Eva Note';
-  if(name === 'Eva Note'){}
+  var name = 'Inspi Lab';
+  if(name === 'Inspi Lab'){}
 
-  if(name !== 'Eva Note'){}
+  if(name !== 'Inspi Lab'){}
   ```
 **[⬆ back to top](#table-of-contents)**
 
