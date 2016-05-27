@@ -1,4 +1,4 @@
-Inspilab Javascript style guide
+Inspilab Javascript style guide() {
 ======================
 
 Based off of [AirBnB's style guide](https://github.com/airbnb/javascript).
