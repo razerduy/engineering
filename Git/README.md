@@ -17,7 +17,7 @@ For CentOS/Fedora/RHEL: $ yum install git
 
 ## Usage:
 ### 1. Setting up a repository:
-..*#### Git Init
+#### Git Init
 + command: git init
 
 Transform the current directory into a Git repository and add a file .git to the current directory and makes it possible to start recording revisions of the project.
