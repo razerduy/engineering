@@ -8,7 +8,7 @@ While the git suite of tools offers many well-implemented features, one of the m
 
 In this guide, we will explore the idea of git hooks and demonstrate how to implement code that can assist you in automating tasks in your own unique environment. We will be using an Ubuntu 14.04 server in this guide, but any system that can run git should work in a similar way.
 
-##H2 Setup Github:
+## Setup Github
 For Windows: http://git-scm.com/download/win
 
 For Mac: http://git-scm.com/download/mac
@@ -16,12 +16,12 @@ For Mac: http://git-scm.com/download/mac
 For Ubuntu/Debian: $ sudo apt-get install git
 
 For CentOS/Fedora/RHEL: $ yum install git
-##### Note:
+##### Note
 
 you can use [Github application](https://desktop.github.com/) or [SourceTree application](https://www.atlassian.com/software/sourcetree)
 
-## Usage:
-### 1. Setting up a repository:
+## Usage
+### 1. Setting up a repository
 ####1.1 Git Init
 + command: git init
 
@@ -35,7 +35,7 @@ Create an empty Git repository in the specified directory. Running this command 
 
 Initialize an empty Git repository, but omit the working directory. Shared repositories should always be created with the --bare flag (see discussion below). Conventionally, repositories initialized with the --bare flag end in .git. For example, the bare version of a repository called my-project should be stored in a directory called my-project.git.
 
-##### Note:
+##### Note
 directory is the folder or the path that you want to create project
 
 ####1.2 Git clone
@@ -47,11 +47,11 @@ Clone the repository located at repo onto the local machine. The original reposi
 
 Clone the repository located at repo into the folder called directory on the local machine. 
 
-##### Note:
+##### Note
 
 repo is link repository of project on github, it can be link ssh or link of https
 
-###### Ex:
+###### Ex
 Link https: https://github.com/mpullerits/cooler.git
 Link ssh: git@github.com:mpullerits/cooler.git
 
