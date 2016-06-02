@@ -10,8 +10,11 @@ In this guide, we will explore the idea of git hooks and demonstrate how to impl
 
 ##H2 Setup Github:
 For Windows: http://git-scm.com/download/win
+
 For Mac: http://git-scm.com/download/mac
+
 For Ubuntu/Debian: $ sudo apt-get install git
+
 For CentOS/Fedora/RHEL: $ yum install git
 ##### Note:
 
