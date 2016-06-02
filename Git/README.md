@@ -1,6 +1,6 @@
-#H1 Engineering
+# Engineering
 
-##H2 Why git?
+## Why git?
 
 Version control has become a central requirement for modern software development. It allows projects to safely track changes and enable reversions, integrity checking, and collaboration among other benefits. The git version control system, in particular, has seen wide adoption in recent years due to its decentralized architecture and the speed at which it can make and transfer changes between parties.
 
@@ -15,9 +15,9 @@ For Ubuntu/Debian: $ sudo apt-get install git
 For CentOS/Fedora/RHEL: $ yum install git
 
 
-##H2 Usage:
-###H3 1. Setting up a repository:
-..* ####H4 Git Init
+## Usage:
+### 1. Setting up a repository:
+..*#### Git Init
 + command: git init
 
 Transform the current directory into a Git repository and add a file .git to the current directory and makes it possible to start recording revisions of the project.
@@ -30,10 +30,10 @@ Create an empty Git repository in the specified directory. Running this command 
 
 Initialize an empty Git repository, but omit the working directory. Shared repositories should always be created with the --bare flag (see discussion below). Conventionally, repositories initialized with the --bare flag end in .git. For example, the bare version of a repository called my-project should be stored in a directory called my-project.git.
 
-#####H5 Note:
+##### Note:
 directory is the folder or the path that you want to create project
 
-..* ####H4 Git clone
+#### Git clone
 + command: git clone repo
 
 Clone the repository located at repo onto the local machine. The original repository can be located on the local filesystem or on a remote machine accessible via HTTP or SSH.
@@ -42,11 +42,11 @@ Clone the repository located at repo onto the local machine. The original reposi
 
 Clone the repository located at repo into the folder called directory on the local machine. 
 
-#####H5 Note:
+##### Note:
 
 repo is link repository of project on github, it can be link ssh or link of https
 
-######H6 Ex:
+###### Ex:
 Link https: https://github.com/mpullerits/cooler.git
 Link ssh: git@github.com:mpullerits/cooler.git
 
@@ -54,7 +54,7 @@ If you use git clone without init, it will create a folder, name of folder is na
 You want to switch other branch, you have to use: "git checkout branch_name" to switch and work with branch that you want work.
 
 
-###H3 2
+### 2
 
 Basic Git command:
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
