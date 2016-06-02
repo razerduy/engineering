@@ -13,11 +13,13 @@ For Windows: http://git-scm.com/download/win
 For Mac: http://git-scm.com/download/mac
 For Ubuntu/Debian: $ sudo apt-get install git
 For CentOS/Fedora/RHEL: $ yum install git
+##### Note:
 
+you can use [Github application](https://desktop.github.com/) or [SourceTree application](https://www.atlassian.com/software/sourcetree)
 
 ## Usage:
 ### 1. Setting up a repository:
-#### Git Init
+####1.1 Git Init
 + command: git init
 
 Transform the current directory into a Git repository and add a file .git to the current directory and makes it possible to start recording revisions of the project.
@@ -33,7 +35,7 @@ Initialize an empty Git repository, but omit the working directory. Shared repos
 ##### Note:
 directory is the folder or the path that you want to create project
 
-#### Git clone
+####1.2 Git clone
 + command: git clone repo
 
 Clone the repository located at repo onto the local machine. The original repository can be located on the local filesystem or on a remote machine accessible via HTTP or SSH.
@@ -54,7 +56,5 @@ If you use git clone without init, it will create a folder, name of folder is na
 You want to switch other branch, you have to use: "git checkout branch_name" to switch and work with branch that you want work.
 
 
-### 2
-
-Basic Git command:
+##2 Basic Git command:
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
