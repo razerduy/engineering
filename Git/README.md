@@ -242,7 +242,7 @@ Create a new connection to a remote repository. After adding a remote, you’ll 
 
 Remove the connection to the remote repository called _name_
 
-+ command: git remote rename _old-name_ _new-name_
++ command: git remote rename __old-name__ __new-name__
 
 Rename a remote connection from _old-name_ to _new-name_
 
@@ -250,39 +250,39 @@ Rename a remote connection from _old-name_ to _new-name_
 
 The git fetch command imports commits from a remote repository into your local repo. The resulting commits are stored as remote branches instead of the normal local branches that we’ve been working with. This gives you a chance to review changes before integrating them into your copy of the project.
 
-+ command: git fetch _remote_
++ command: git fetch __remote__
 
 Fetch all of the branches from the repository. This also downloads all of the required commits and files from the other repository.
 
-+ command: git fetch _remote_ _branch_
++ command: git fetch __remote__ __branch__
 
 Same as the above command, but only fetch the specified branch.
 
 ####7.3. Git pull
 
-+ command: git pull _remote_
++ command: git pull __remote__
 
 Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as git fetch _remote_ followed by git merge origin/_current-branch_.
 
-+ command: git pull --rebase _remote_
++ command: git pull --rebase __remote__
 
 Same as the above command, but instead of using git merge to integrate the remote branch with the local one, use git rebase.
 
 ####7.3. Git push
 
-+ command: git push <remote> <branch>
++ command: git push __remote__ __branch__
 
-Push the specified branch to <remote>, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.
+Push the specified branch to _remote_, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.
 
-+ command: git push <remote> --force
++ command: git push _remote_ --force
 
 Same as the above command, but force the push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing.
 
-+ command: git push <remote> --all
++ command: git push _remote_ --all
 
 Push all of your local branches to the specified remote.
 
-+ command: git push <remote> --tags
++ command: git push _remote_ --tags
 
 Tags are not automatically pushed when you push a branch or use the --all option. The --tags flag sends all of your local tags to the remote repository.
 
