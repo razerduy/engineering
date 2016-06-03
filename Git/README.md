@@ -54,9 +54,9 @@ repo is link repository of project on github, it can be ssh or https
 
 ###### Ex
 
-Link https: _https://github.com/mpullerits/cooler.git _
+Link https: https://github.com/mpullerits/cooler.git
 
-Link ssh: _git@github.com:mpullerits/cooler.git_
+Link ssh: git@github.com:mpullerits/cooler.git
 
 If you use git clone without init, it will create a folder, name of folder is name project, now you work with branch master.
 You want to switch other branch, you have to use: "git checkout branch__name" to switch and work with branch that you want work.
