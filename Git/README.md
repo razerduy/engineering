@@ -16,6 +16,7 @@ For Mac: http://git-scm.com/download/mac
 For Ubuntu/Debian: $ sudo apt-get install git
 
 For CentOS/Fedora/RHEL: $ yum install git
+
 ##### Note
 
 you can use [Github application](https://desktop.github.com/) or [SourceTree application](https://www.atlassian.com/software/sourcetree)
@@ -91,6 +92,7 @@ The git commit command commits the staged snapshot to the project history. Commi
 
 + command: git commit
 + command: git commit -m __message__
+
 ##### Note: you should use "git commit -m __message__" to remember what you changes
 
 ### 3. Inspecting a repository
@@ -286,5 +288,64 @@ Push all of your local branches to the specified remote.
 
 Tags are not automatically pushed when you push a branch or use the --all option. The --tags flag sends all of your local tags to the remote repository.
 
+### 8. Using branch
+
+####8.1. Git branch
+
+A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process discussed in Git Basics, the first module of this series. You can think of them as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
+
+The git branch command lets you create, list, rename, and delete branches. It doesn’t let you switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the git checkout and git merge commands.
+
++ command: git branch
+
+List all of the branches in your repository.
+
++ command: git branch __branch__
+
+Create a new branch called _branch_. This does not check out the new branch.
+
++ command: git branch -d __branch__
+
+Delete the specified branch. This is a “safe” operation in that Git prevents you from deleting the branch if it has unmerged changes.
+
++ command: git branch -D __branch__
+
+Force delete the specified branch, even if it has unmerged changes. This is the command to use if you want to permanently throw away all of the commits associated with a particular line of development.
+
++ command: git branch -m __branch__
+
+Rename the current branch to _branch_.
+
+####8.2. Git checkout
+
+The git checkout command lets you navigate between the branches created by git branch. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
+
+In the previous module, we saw how git checkout can be used to view old commits. Checking out branches is similar in that the working directory is updated to match the selected branch/revision; however, new changes are saved in the project history—that is, it’s not a read-only operation.
+
++ command: git checkout __existing-branch__
+
+Check out the specified branch, which should have already been created with git branch. This makes _existing-branch_ the current branch, and updates the working directory to match.
+
++ command: git checkout -b __new-branch__
+
+Create and check out _new-branch_. The -b option is a convenience flag that tells Git to run git branch _new-branch_ before running git checkout _new-branch_. git checkout -b _new-branch_ _existing-branch_
+
+Same as the above invocation, but base the new branch off of _existing-branch_ instead of the current branch.
+
+####8.3. Git merge
+
+Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+
+Note that all of the commands presented below merge into the current branch. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected. Again, this means that git merge is often used in conjunction with git checkout for selecting the current branch and git branch -d for deleting the obsolete target branch.
+
++ command: git merge _branch_
+
+Merge the specified branch into the current branch. Git will determine the merge algorithm automatically (discussed below).
+
++ command: git merge --no-ff __branch__
+
+Merge the specified branch into the current branch, but always generate a merge commit (even if it was a fast-forward merge). This is useful for documenting all merges that occur in your repository.
+
 ## Basic Git command:
+
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
