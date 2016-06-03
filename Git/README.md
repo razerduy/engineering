@@ -52,8 +52,10 @@ Clone the repository located at repo into the folder called directory on the loc
 repo is link repository of project on github, it can be ssh or https
 
 ###### Ex
-Link https: https://github.com/mpullerits/cooler.git
-Link ssh: git@github.com:mpullerits/cooler.git
+
+Link https: _https://github.com/mpullerits/cooler.git _
+
+Link ssh: _git@github.com:mpullerits/cooler.git_
 
 If you use git clone without init, it will create a folder, name of folder is name project, now you work with branch master.
 You want to switch other branch, you have to use: "git checkout branch__name" to switch and work with branch that you want work.
@@ -166,7 +168,7 @@ Perform a “dry run” of git clean. This will show you which files are going t
 
 + command: git clean -f
 
-Remove untracked files from the current directory. The -f _force_ flag is required unless the clean.requireForce configuration option is set to false (it's true by default). This will not remove untracked folders or files specified by _.gitignore_.
+Remove untracked files from the current directory. The -f (force) flag is required unless the clean.requireForce configuration option is set to false (it's true by default). This will not remove untracked folders or files specified by _.gitignore_.
 
 + command: git clean -f __path__
 
@@ -183,7 +185,106 @@ Remove untracked files from the current directory as well as any files that Git 
 + References: https://www.atlassian.com/git/tutorials/undoing-changes
 
 ### 6. Rewriting history
+
+####6.1. Git commit --amend
+
++ command: git commit --amend
+
+Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot.
+
+####6.2. Git rebase
+
++ command: git rebase __base__
+
+Rebase the current branch onto _base_, which can be any kind of commit reference (an ID, a branch name, a tag, or a relative reference to HEAD).
+
+####6.3. Git rebase -i
+
+Running git rebase with the -i flag begins an interactive rebasing session. Instead of blindly moving all of the commits to the new base, interactive rebasing gives you the opportunity to alter individual commits in the process. This lets you clean up history by removing, splitting, and altering an existing series of commits. It’s like git commit --amend on steroids.
+
++ command: git rebase -i __base__
+
+Rebase the current branch onto _base_, but use an interactive rebasing session. This opens an editor where you can enter commands (described below) for each commit to be rebased. These commands determine how individual commits will be transferred to the new base. You can also reorder the commit listing to change the order of the commits themselves.
+
+####6.4. Git reflog
+
+Git keeps track of updates to the tip of branches using a mechanism called reflog. This allows you to go back to changesets even though they are not referenced by any branch or tag. After rewriting history, the reflog contains information about the old state of branches and allows you to go back to that state if necessary.
+
++ command: git reflog
+
+Show the reflog for the local repository.
+
++ command: git reflog --relative-date
+
+Show the reflog with relative date information (e.g. 2 weeks ago).
+
 + References: https://www.atlassian.com/git/tutorials/rewriting-history
+
+### 7. Syncing
+
+####7.1. Git remote
+
+The git remote command lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories. Instead of providing real-time access to another repository, they serve as convenient names that can be used to reference a not-so-convenient URL.
+
++ command: git remote
+
+List the remote connections you have to other repositories.'
+
++ command: git remote -v
+
+Same as the above command, but include the URL of each connection.
+
++ command: git remote add __name__ __url__
+
+Create a new connection to a remote repository. After adding a remote, you’ll be able to use _name_ as a convenient shortcut for _url_ in other Git commands.
+
++ command: git remote rm __name__
+
+Remove the connection to the remote repository called _name_
+
++ command: git remote rename _old-name_ _new-name_
+
+Rename a remote connection from _old-name_ to _new-name_
+
+####7.2. Git fetch
+
+The git fetch command imports commits from a remote repository into your local repo. The resulting commits are stored as remote branches instead of the normal local branches that we’ve been working with. This gives you a chance to review changes before integrating them into your copy of the project.
+
++ command: git fetch _remote_
+
+Fetch all of the branches from the repository. This also downloads all of the required commits and files from the other repository.
+
++ command: git fetch _remote_ _branch_
+
+Same as the above command, but only fetch the specified branch.
+
+####7.3. Git pull
+
++ command: git pull _remote_
+
+Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as git fetch _remote_ followed by git merge origin/_current-branch_.
+
++ command: git pull --rebase _remote_
+
+Same as the above command, but instead of using git merge to integrate the remote branch with the local one, use git rebase.
+
+####7.3. Git push
+
++ command: git push <remote> <branch>
+
+Push the specified branch to <remote>, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.
+
++ command: git push <remote> --force
+
+Same as the above command, but force the push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing.
+
++ command: git push <remote> --all
+
+Push all of your local branches to the specified remote.
+
++ command: git push <remote> --tags
+
+Tags are not automatically pushed when you push a branch or use the --all option. The --tags flag sends all of your local tags to the remote repository.
 
 ## Basic Git command:
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
