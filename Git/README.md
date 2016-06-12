@@ -316,6 +316,16 @@ Force delete the specified branch, even if it has unmerged changes. This is the 
 
 Rename the current branch to _branch_.
 
++ command: git branch -f __branch__ __commit__
+
+You're an expert on relative refs now, so let's actually use them for something.
+
+One of the most common ways I use relative refs is to move branches around. You can directly reassign a branch to a commit with the -f option.
+
+Ex: git branch -f master HEAD~3
+
+Moves (by force) the master branch to three parents behind HEAD.
+
 ####8.2. Git checkout
 
 The git checkout command lets you navigate between the branches created by git branch. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
@@ -332,6 +342,8 @@ Create and check out _new-branch_. The -b option is a convenience flag that tell
 
 Same as the above invocation, but base the new branch off of _existing-branch_ instead of the current branch.
 
+##### Note: git checkout __commit__ assign HEAD to that commit, HEAD is always hidden in git
+
 ####8.3. Git merge
 
 Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
@@ -346,6 +358,16 @@ Merge the specified branch into the current branch. Git will determine the merge
 
 Merge the specified branch into the current branch, but always generate a merge commit (even if it was a fast-forward merge). This is useful for documenting all merges that occur in your repository.
 
+##### Note: you must switch the branch that you want to merge from another.
+
+Ex: you want to merge the dev branch to the master branch. You should switch to the master branch, then type:
+
+git merge dev - dev is the branch that you want to merge to master.
+
 ## Basic Git command:
 
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+## Basic practice with animation:
+
+http://learngitbranching.js.org
