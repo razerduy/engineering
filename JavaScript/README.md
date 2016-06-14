@@ -1,4 +1,4 @@
-Inspilab Javascript style guide() {
+Inspilab Javascript style guide
 ======================
 
 Based off of [AirBnB's style guide](https://github.com/airbnb/javascript).
@@ -493,4 +493,4 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 **[⬆ back to top](#table-of-contents)**
 
-# };
+#
