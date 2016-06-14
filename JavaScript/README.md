@@ -57,6 +57,14 @@ Declarations for `var` as follows:
   var a = 1,
    b = 2,
    c = 'string';
+   
+  // bad
+  var thefuture;
+  
+  // good
+  var theFuture;
+  or
+  var TheFuture;
   ```
 **[⬆ back to top](#table-of-contents)**
 
@@ -180,6 +188,24 @@ Use `===` and `!==`
   ```
 **[⬆ back to top](#table-of-contents)**
 
+##TryStatement
+
+Use try-catch
+```javascript
+   // bad
+   var myStudent = new Student();
+   if(myStudent !== null){
+	  myStudent.getName();
+   }
+   
+   // good
+   var myStudent = new Student();
+   try{
+	  myStudent.getName();
+   }catch(error){
+	  // do something if get error
+   }
+```
 
 ##Blocks
 
